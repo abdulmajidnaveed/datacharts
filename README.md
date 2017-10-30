@@ -30,22 +30,22 @@ _DataMaps_ is used to draw SVG image of USA map with labels. It is a customizabl
 
 >More about dc.js and Crossfilter.js:
 >
-dc.js is a javascript charting library with native Crossfilter support, allowing highly efficient exploration on large multi-dimensional datasets. It leverages D3 to render charts in CSS-friendly SVG format.
+>dc.js is a javascript charting library with native Crossfilter support, allowing highly efficient exploration on large multi-dimensional datasets. It leverages D3 to render charts in CSS-friendly SVG format.
 >
-Charts rendered using dc.js are data driven and reactive and provide instant feedback to user interaction. In dc.js, each chart displays an aggregation of some attributes through the position, size, and color of its elements, and also presents a dimension which can be filtered. When the filter or brush changes, all other charts are updated dynamically, using animated transitions. dc.js combines the analytics power of Crossfilter with the charting power of D3.js.
+>Charts rendered using dc.js are data driven and reactive and provide instant feedback to user interaction. In dc.js, each chart displays an aggregation of some attributes through the position, size, and color of its elements, and also presents a dimension which can be filtered. When the filter or brush changes, all other charts are updated dynamically, using animated transitions. dc.js combines the analytics power of Crossfilter with the charting power of D3.js.
 >
-More about Crossfilter - `fast multidimensional filtering for coordinated views`
+>More about Crossfilter - `fast multidimensional filtering for coordinated views`
 >
-Crossfilter is a JavaScript library for exploring large multivariate datasets in the browser, allowing multidimensional filtering and aggregation of tabular data. In other words, it allows the user to slice and dice row-based data.
+>Crossfilter is a JavaScript library for exploring large multivariate datasets in the browser, allowing multidimensional filtering and aggregation of tabular data. In other words, it allows the user to slice and dice row-based data.
 
 Other supporting libraries used include `typeahead.js`, `underScore.js`, `TopoJSON`, 
 and `JQuery`.
 
 >_Typeahead.js_ is a jQuery autocomplete library.
 >
-[Underscore.js](`http://underscorejs.org/`) is a JavaScript library that provides useful functional programming helpers without extending any built-in objects.
+>[_Underscore.js_](`http://underscorejs.org/`) is a JavaScript library that provides useful functional programming helpers without extending any built-in objects.
 >
-_TopoJSON_ is an open standard format for representing geographical features and encodes geospatial topology.
+>_TopoJSON_ is an open standard format for representing geographical features and encodes geospatial topology.
 
 
 ## Appendix
@@ -75,7 +75,6 @@ Check out the example page and its annotated source for a quick five minute how-
 * Crossfilter
 
 ![alt text](https://www.psdmockups.com/wp-content/uploads/2016/07/crossfilter-by-square.jpg "CF")
-![alt text](https://thor-project.github.io/dashboard-tutorial/assets/img/crossfilter.svg "CF")
 
 > [http://square.github.io/crossfilter/](http://square.github.io/crossfilter/)
 
