@@ -1,5 +1,5 @@
 # Airplane Strikes 
-This is a visualization of data on airplane strikes (with birds).
+This is a visualization of data on airplane strikes (with birds). View it at `https://abdulmajidnaveed.github.io/datacharts/`
 
 ---
 ## Data
