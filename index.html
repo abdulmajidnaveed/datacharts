@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>WildLife Strikes</title>
+        <link rel="stylesheet" href="css/typeahead.css">
+        <link rel="stylesheet" href="css/viz.css">
+        <link href='http://fonts.googleapis.com/css?family=Gudea' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+
+        <div class="container">
+
+            <h1>Information Visualization of Airplane Strikes</h1>
+
+            <div class="overlay">
+                <input id="dep" type="text" placeholder="Look up an airport" disabled class="dep typeahead">
+                </span>
+                <span id="msg" class="error msg">We can't find strikes from this location</span>
+            </div>
+
+            <div id="map" class="area map">
+                <h2 class="hidden">Source airport for strikes</h2>
+            </div>
+
+             <div class="charts clearfix hidden">
+                <div id="species-chart" class="area">
+                    <h2>Strikes across species (hover)</h2>
+                    <button type="button" class="reset">reset</button>
+                </div>
+            </div>
+            <div class="charts clearfix hidden chartRowElement">
+                <div id="year-chart" class="area">
+                    <h4>Strikes across year</h4>
+                    <button type="button" class="reset">reset</button>
+                </div>
+            </div>
+            <div class="charts hidden chartRowElement">
+                <div id="month-chart" class="area col-2 clearfix">
+                    <h4 class="shift">Strikes across month</h4>
+                    <button type="button" class="reset">reset</button>
+                </div>
+            </div>
+            <div class="charts hidden">
+                <div id="pie-chart" class="area col-2 clearfix">
+                    <h3>Species Distribution</h3>
+                    <button type="button" class="reset">reset</button>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <script src="//d3js.org/d3.v3.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.1.0/topojson.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.11/crossfilter.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.bundle.min.js"></script>
+        <script src="js/datamaps.usa.min.js"></script>
+        <script src="js/dc.js"></script>
+        <script src="js/viz.js"></script>
+    </body>
+</html>

@@ -1,0 +1,191 @@
+body {
+    background-color: lightblue;
+    font-family:'Gudea', sans-serif;
+    padding: 1em 1em 1em 1em;
+    color: navy; /* #4F0C00; */
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.hidden {
+    display: none;
+}
+
+.container {
+    margin: 1em auto;
+    /* width: 95%; */
+}
+h1 {
+    color: navy; /* #AB2418; */
+    font-size: 1.5em;
+}
+
+.overlay {
+    background-color: rgba(255,255,255,0.7);
+    padding: .3em;
+    /* border-radius: 0.5em; */
+    width: 228px; /*50%; */
+}
+
+    .msg {
+        position: relative;
+        top: 0.8em;
+        left: 0.5em;
+        display: none;
+        opacity: 0;
+        color: #AB2418;
+        font-size: 0.9em; /* 1.2em; */
+        margin-bottom: 1em;
+        transition: all 0.5s ease-in;
+    }
+
+    .msg.in {
+        opacity: 1;
+        display: inline-block;
+    }
+
+    .error,
+    .error:focus,
+    .error:active {
+        border-color: #AB2418;
+        color: #AB2418;
+    }
+
+.area {
+    position: relative;
+}
+
+    .area h2 {
+        position: absolute;
+        top: 0;
+        left: 6em;
+        font-size: 1.1em;
+        /* background: rgba(57, 192, 232, 0.46); */
+        padding: 0.2em 0.4em;
+        /* border-radius: 0.5em; */
+    }
+
+    .area h3 {
+        position: absolute;
+        top: 2em;
+        left: 1em;
+        font-size: 0.8em;
+        padding: 0.2em 0.4em;
+    }
+    .area h4 {
+        position: absolute;
+        top: 2em;
+        left: 4em;
+        font-size: 0.8em;
+        padding: 0.2em 0.4em;
+    }
+
+    .map {
+        height: 430px;
+        width: 750px;
+        padding-top: 1.5em; /* float: left; */
+    }
+
+#pie-chart {
+    float: right;
+    /* height: 500px; */
+    width: 150px;
+    position: fixed;
+    top: 100px;
+    right: 70px;
+    fill-opacity: .650;    
+}
+
+.charts {
+    overflow: hidden;
+    clear: both;
+    margin-bottom: 2em;
+    /* display: inline-block; */
+}
+.chartRowElement{
+    display: inline-block;
+}
+.chartRowElement.hidden{
+    display: none;
+}
+
+.charts .brush rect.extent {
+    fill: gray;
+    fill-opacity: .250;
+}
+
+    .charts .area {
+        padding-top: 4em;
+        padding-bottom: 1em;
+    }
+
+    .charts .col-2 {
+        float: left;
+    }
+
+
+.reset {
+    position: absolute;
+    top: 1.5em;
+    /* background : palevioletred;  none; */
+    border: none;
+    /* color: #AB2418; */
+    /* font-weight: bold; */
+    -webkit-text-fill-color: #ab2418;
+    background-color: rgba(206, 140, 134, 0.6);    
+    /* text-decoration: underline; */
+    /* border-radius: 0.5em; */
+    transition: all 0.2s;
+}
+
+.reset:hover {
+    background-color: rgba(239, 114, 103, 0.6);
+    text-decoration: none;
+}
+
+.hover-info {
+    padding: 0.2em 0.5em;
+    color: #E9D3A1;
+    font-family:'Gudea', sans-serif;
+    background: rgba(231, 95, 43, 0.7);
+    transition: 0.2s all;
+}
+
+ SVG
+svg .bar rect {
+    fill: rgba(214, 39, 40, 0.7);
+    stroke: rgba(214, 39, 40, 0.9);
+    stroke-width: 1px;
+}
+
+    svg .bar text {
+        font-size: 0.8em;
+        fill: #4F0C00;
+    }
+
+svg .tick line {
+    stroke: white;
+}
+
+svg .tick text {
+    color: #4F0C00;
+}
+
+svg .axis text {
+    font-size: 10px;
+}
+
+svg .axis path,
+svg .axis line {
+    fill: white;
+    shape-rendering: crispEdges;
+}
+
