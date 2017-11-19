@@ -8,10 +8,8 @@
     var groupUnknowns = false;
     var debug = 0;
 
-    /*
-    Draw USA map using Datamap
-    show states labels
-    */
+
+    // Draw USA map using Datamap; show states labels
     function initializeMap(){
         map = new Datamap({
             element: document.getElementById('map'),
@@ -40,11 +38,10 @@
     }
 
 
-    /*
-    * Read in airplane strike data and stores it in wlSample
-    * editAirportID: edit the airport IDs
-    *  (remove the initial 'K' from the airport IDs to match iatacode from airports.csv)
-    */
+
+    // Read in airplane strike data and stores it in wlSample
+    // editAirportID: edit the airport IDs
+    //  (remove the initial 'K' from the airport IDs to match iatacode from airports.csv)
     function fetchWildLifeDataSample() {
         d3.csv('data/wildlife.csv', function(data) {
             wlSample = data.map(function(d) {
@@ -60,7 +57,8 @@
                 }
                 return newObj;
             }
-// where is this edited being used? .... NN
+
+            // where is this edited being used? .... [N]
             var edited = data.map(function(d, index, array) {
                 s1 = d.AIRPORT_ID;
                 s2 = s1.substring(1, 4); // USA ones have first letter K
@@ -89,18 +87,16 @@
                     latitude: d.latitude_deg,
                     longitude: d.longitude_deg
                 };
-            }); // rename fields to simpler names NN
+            }); // rename fields to simpler names [N]
             initializeInput();
         });
     }
 
 
-    /*
-    * Read in aircraft-strike data and draw four charts
-    *  use crossfilter to get dimensions and grouping
-    *  use dc.js to draw the charts
-    */
-// ===============================================================================================
+    // Read in aircraft-strike data and draw four charts
+    //  use crossfilter to get dimensions and grouping
+    //  use dc.js to draw the charts
+// ======================================================================================
     function drawCharts(data){
         d3.selectAll('.hidden').classed('hidden', false);
         if (debug>0) console.log('drawCharts data:', data);
@@ -182,24 +178,7 @@
             .xAxis().tickFormat(function(d) { return '' });
 
             v1 = speciesChart.xAxis() //.domain()
-// speciesChart.xAxis().domain(numIncidentsBySpecies.all().map(function(d){return d.key}))
 
-// xscale=d3.scale.ordinal() .domain(numIncidentsBySpecies.all().map(function(d){return d.key}))
-// speciesChart.xAxis().scale(xscale)
-
-      // // console.log('speciesChart:', speciesChart);
-      // // console.log('speciesChart.yaxis()', speciesChart.yAxis());
-            // you can get the yaxis but it isn't an object you can call properties on
-            // so the below fails:
-            // var v1 = speciesChart
-            //     .yAxis() .style("fill", "green")
-            // console.log(v1);
-
-    // // selections with d3 that worked/did the job:    
-        // var v2 = d3.select('#species-chart'); console.log(v2);
-        // v1=d3.select('#species-chart').select('.axis').select('path').style('color', 'green')
-        // v1=d3.selectAll('.axis').select('path').style('fill', 'green')
-        //v1=d3.selectAll('.axis').select('path').style('fill', 'none')
 
         yearChart
             .width(300)
@@ -209,7 +188,7 @@
             .group(numIncidentsByYear)
             .transitionDuration(500)
             .x(d3.scale.linear().domain([Number(minYear), (Number(maxYear)+1).toString() ]))
-//          .x(d3.time.scale().domain([minYear, (Number(maxYear)+1).toString() ]))
+         // .x(d3.time.scale().domain([minYear, (Number(maxYear)+1).toString() ]))
 
             .elasticY(true)
             .xAxisPadding(100)
@@ -225,7 +204,7 @@
             .dimension(monthDim)
             .group(numIncidentsByMonth)
             .transitionDuration(500)
-//            .x(d3.time.scale().domain([1, 12+1]))
+            // .x(d3.time.scale().domain([1, 12+1]))
             .x(d3.scale.linear().domain([1, 12+1]))
             .elasticY(true)
             .ordinalColors(['#E1B74D'])
@@ -301,44 +280,7 @@
         // do bar graph plotting axes adjustments
         (function () {
             adjustChartAxesLabels();
-            /*
-            monthAbbreviation = {
-                1: 'Jan', 2: 'Feb', 3: 'Mar', 4: 'Apr', 5: 'May', 6: 'June',
-                7: 'July',8: 'Aug', 9: 'Sep', 10: 'Oct', 11: 'Nov', 12: 'Dec'
-            };
-            // g class = axis x
-            //    g class = tick
-            //       <line>  - svg .axis path, svg .axis line, svg .tick line
-            //       <text>  - svg .axis text, svg .tick text
-
-            speciesChart.selectAll('.axis.x').selectAll('text')
-              .text(function(d,i){ return d}) 
-              .attr('transform', 'rotate(50)') .style('text-anchor', 'start')
-              .attr('dx','1em') .attr('dy','.35em')
-
-            yearChart.selectAll('.axis.x').selectAll('text')
-              .attr('transform', 'rotate(50)') .style('text-anchor', 'start')
-              .text(function(d,i){ return d})
-              .attr('dx','.8em')  .attr('dy','-.35em')
-
-            monthChart.selectAll('.axis.x').selectAll('text')
-              .text(function(d,i){
-                return monthAbbreviation[d] })// let month = monthAbbreviation[d];console.log(month);return month})
-              .attr('transform', 'rotate(50)') .style('text-anchor', 'start')
-              .attr('dx', '.9em') .attr('dy', '-.4em')
-            */
-
             adjustChartAxesColors();
-            /*
-            v1=d3.selectAll('.axis').select('path').style('fill', 'transparent')
-            //  var v2=d3.selectAll('.axis')
-            //    .selectAll(".tick:not(:first-of-type) line").attr("stroke", "#777")
-            v2=d3.selectAll('.axis').select('path').style('stroke', 'red')
-    //        v1=d3.selectAll('.axis').select('text').style('stroke', 'orange')
-            //v1=d3.selectAll('.axis').selectAll('.tick').attr('fill', 'brown')
-            v1=d3.selectAll('.axis').selectAll('.tick').attr('fill', 'brown') // tick text labels
-            v1=d3.selectAll('.tick line').style('stroke', 'orange') // tick-lines
-            */
         }());
 
         $('.reset').on('click', resetCharts);
@@ -352,7 +294,6 @@
     function drawAirport(originator){
         var paths = [];
         var bubbles = [];
-        // console.log(airports);
             var path = {
                 origin: {
                     latitude: originator.latitude,
@@ -387,9 +328,7 @@
         });
     }
 
-    /*
-    * Formats a number to a currency format.
-    */
+    // Formats a number to a currency format.
     Number.prototype.formatMoney = function(decPlaces, thouSeparator, decSeparator) {
     var n = this,
         decPlaces = isNaN(decPlaces = Math.abs(decPlaces)) ? 2 : decPlaces,
@@ -402,9 +341,7 @@
     };
 
 
-    /*
-    * Gets the total costs of repairs for all struck flights out of airport_id.
-    */
+    // Gets the total costs of repairs for all flights with strikes, out of airport_id
     function getTotalCostsByAirport(airport_id) {
         var total = 0;
         var sample = filterAirports(airport_id);
@@ -421,10 +358,9 @@
         return total;
     }
 
-    /*
-    * Filter airports by airport ID
-    * if aiport ID matches from WL and airports data sets
-    */
+
+    // Filter airports by airport ID
+    // if aiport ID matches from WL and airports data sets
     // airport_id is iatacode 
     function filterAirports(airport_id) {
         var sample =  wlSample.filter(function(d) {
@@ -433,11 +369,10 @@
         return sample;
     }
 
-    /*
-    * Filters the data by airport
-    * Draws the charts for the airport selected
-    * Draws the airport for the airport selected
-    */
+
+    // Filters the data by airport
+    // Draws the charts for the airport selected
+    // Draws the airport for the airport selected
     function onAirportChanged(evt, selected) {
         if (debug>0) console.log('onAirportChanged: evt:', evt, ', selected:', selected)
         var sample = filterAirports(selected.iataCode);
@@ -457,10 +392,8 @@
         drawAirport(selected);
     }
 
-    /*
-    * Takes in the input from the search bar
-    * Shows top 10 possible airports depending on the words entered
-    */
+    // Takes in the input from the search bar
+    // Shows top 10 possible airports depending on the words entered
     function initializeInput(){
        var engine = new Bloodhound({
             name: 'airports',
