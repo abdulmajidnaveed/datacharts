@@ -2,17 +2,31 @@
 
 ![preview](preview/img0.png)
 
-This is a visualization for data on aircraft strikes (with birds). View it at `https://abdulmajidnaveed.github.io/datacharts/`
+This is a visualization for data on aircraft strikes (with birds).
+
+View it at `https://abdulmajidnaveed.github.io/datacharts/`
 
 ---
 ## Data
 The dataset used was obtained from the FAA Wildlife Strike DataBase `http://wildlife.faa.gov/`.
-Some filtering and processing was done on the dataset. Airport geographical data was used to illustrate the airport on the map.
+Some filtering and processing was done on the dataset. 
+Airport geographical data was used to illustrate the airport on the map.
 
 ---
 ## Description
 The visualization allows you to view the distribution of strike events across bird species, months, years for a specified airport.
-Type something in the textbox and a dropdown will show suggested airports. Choose one and charts (three bar graphs and a pie chart) will appear and the map will show a circle representing the airport location.
+
+Type something in the textbox and a dropdown will show suggested airports.
+
+![preview](preview/img1.png)
+
+Choose one and charts (three bar graphs and a pie chart) will appear and the map will show a circle representing the airport location.
+
+![preview](preview/img2.png)
+
+![preview](preview/img3.png)
+
+![preview](preview/img4.png)
 
 For the selected airport, the bar graphs show the distribution of strike counts across various dimensions. The strike counts are shown distributed across bird species, year and month. The pie chart shows the proportion of events for the top five bird species. The circle on the map shows the location.
 
