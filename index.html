@@ -25,21 +25,16 @@
         <script>
             mostRecentActiveb = document.getElementById("b0");
             function f1(buttonId){
-                // console.log('f1(',buttonId,')');
-                // console.log('mostRecentActiveb:', mostRecentActiveb);
-                var newButtonPressed = document.getElementById(buttonId); // console.log(newButtonPressed);
-                // console.log(mostRecentActiveb===newButtonPressed);
-                // console.log(newButtonPressed.className);
+                var newButtonPressed = document.getElementById(buttonId);
                 if (newButtonPressed.className === "inactive") {
                     newButtonPressed.className = "active"; 
-                    mostRecentActiveb.className="inactive";
+                    mostRecentActiveb.className = "inactive";
                     mostRecentActiveb=newButtonPressed;
                 } else {
                     // pressed already active button; do nothing
                 }
                 toggleResponsive();
             }
-
             /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
             function toggleResponsive() {
                 var x = document.getElementById("topnav");
