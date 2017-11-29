@@ -1,13 +1,7 @@
+/* The top navigation bar (menu) */
 
-/* https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
-/* https://www.w3schools.com/howto/howto_css_fixed_menu.asp */
-
-/* Responsive Navigation Bar */
-
- /* Add a black background color to the top navigation */
- /* The navigation bar */
  .topnavbar {
-    background-color: #030;
+    background-color: #030; /* dark green background color*/
     overflow: hidden;
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
@@ -27,21 +21,18 @@
 
 /* Change the color of links on hover */
 .topnavbar a:hover {
-    background-color: #F2F2F2;
-
-    /* background-color: #ddd; */
-    /* color: black; */
-    color: #030;;
+    background-color: #F2F2F2;   /* #ddd; */
+    color: #030;/* color: black; */
 }
 
-/* Add an active class to highlight the current page */
-.active {
+/* Add an active class to highlight the current button */
+.topnavbar .active {
     /* background-color: #4CAF4F; */
-
     background-color: #27BA2D;
     color: white;
 }
-.active:hover   {
+/* flash for hover on active button */
+.topnavbar .active:hover {
     animation-name: flash1;
     animation-duration: 1s;
     animation-timing-function: linear;
@@ -59,20 +50,18 @@
     display: none;
 } 
 
+/* left space to position menu in center */
 .topnavbar span.leftspacer {
-    width: -moz-calc((100% - 500px)*0.5);
+    width: -moz-calc((100% - 410px)*0.5);
     width: -webkit-calc((100% - 410px)*0.5);
-    width: calc((100% - 410px)*0.5);    
+    width: calc((100% - 410px)*0.5);
     height:2px; float: left; display: block;
 }
 
  /* When the screen is less than 600 pixels wide, hide all links, 
- except for the first one ("Home"). Show the link that contains 
+ except for the active one. Show the link that 
  should open and close the topnav (.icon) */
  @media screen and (max-width: 600px) {
-    /* .topnavbar a:not(:nth-child(2)) {display: none;} */
-
-    /* .topnavbar a[style*="inactive"] {background-color: lawngreen;} */
 
     .topnavbar a.inactive {display: none;}
     /* .topnavbar a.active:hover {
@@ -80,9 +69,8 @@
          text-transform: uppercase;
          font-style: italic;
     } */
-    .topnavbar a.active:hover 
-      span {background-color: lime;  }
-    
+    .topnavbar a.active:hover
+       span { background-color: lime; }
     .topnavbar a.icon {
       float: right;
       display: block;
@@ -91,18 +79,19 @@
         position: relative;
         /* height: 32px; */
     }
-
     .topnavbar span.leftspacer {display:none;}
     
-    /* add this to let topnavbar move to top of screen instead of having whitespace above it*/
+    /* add this to let topnavbar move to top of screen instead 
+    of having whitespace above it*/
     body {
         margin-top: 0px; padding-top: 0px; margin-right: 0px;
     }
   }
   
-  /* The "responsive" class is added to the topnav with JavaScript when 
-  the user clicks on the icon. This class makes the topnav look good on small 
-  screens (display the links vertically instead of horizontally) */
+  /* The "responsive" class is added to the topnav with JavaScript 
+  when the user clicks on the icon. This class makes the topnav 
+  look good on small screens (display the links vertically instead 
+  of horizontally) */
   @media screen and (max-width: 600px) {
     .topnavbar.responsive {position: relative;}
     .topnavbar.responsive a.icon {
@@ -117,4 +106,9 @@
     }
   } 
 
+/* References */
+/*  */
+/* https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
+/* https://www.w3schools.com/howto/howto_css_fixed_menu.asp */
+/* Responsive Navigation Bar */
 
