@@ -1,7 +1,7 @@
 /* The top navigation bar (menu) */
 
  .topnavbar {
-    background-color: #030; /* dark green background color*/
+    background-color: #003;/*#030; /* dark green background color*/
     overflow: hidden;
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
@@ -22,13 +22,13 @@
 /* Change the color of links on hover */
 .topnavbar a:hover {
     background-color: #F2F2F2;   /* #ddd; */
-    color: #030;/* color: black; */
+    color: #003;/*#030;/* color: black; */
 }
 
 /* Add an active class to highlight the current button */
 .topnavbar .active {
     /* background-color: #4CAF4F; */
-    background-color: #27BA2D;
+    background-color: #272DBA; /* #27BA2D; */
     color: white;
 }
 /* flash for hover on active button */
@@ -41,8 +41,8 @@
     animation-play-state: running;
 }
 @keyframes flash1 {
-    from {background-color: white;}
-    to {background-color: lime; }
+    from {background-color: blue;}
+    to {background-color: white; /*lime;*/ }
 }
 
 /* Hide the link that should open and close the topnav on small screens */
@@ -70,7 +70,7 @@
          font-style: italic;
     } */
     .topnavbar a.active:hover
-       span { background-color: lime; }
+       span { background-color: blue;/*lime;*/ }
     .topnavbar a.icon {
       float: right;
       display: block;
