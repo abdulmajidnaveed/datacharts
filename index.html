@@ -6,8 +6,51 @@
         <link rel="stylesheet" href="css/typeahead.css">
         <link rel="stylesheet" href="css/viz.css">
         <link href='https://fonts.googleapis.com/css?family=Gudea' rel='stylesheet' type='text/css'>
+
+        <!-- --for top navigation bar -->
+        <link rel="stylesheet" href="css/topnavbar.css">
+        
     </head>
     <body>
+        <!-- html top navigation bar BEGIN -->
+        <div class="topnavbar"  id="topnav" >
+            <span class="leftspacer"></span>
+            <a href="#home" class="active" id="b0" onclick="f1('b0')"><span>Home</span></a>
+            <a href="#descr" class="inactive" id="b1" onclick="f1('b1')"><span>Description</span></a>
+            <a href="#data" class="inactive" id="b2" onclick="f1('b2')"><span>Data</span></a>
+            <a href="#lib" class="inactive" id="b3" onclick="f1('b3')"><span>Libraries</span></a>
+            <a href="#about" class="inactive" id="b4" onclick="f1('b4')"><span>About</span></a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleResponsive()"><span>&#9776;</span></a>
+        </div>
+        <script>
+            mostRecentActiveb = document.getElementById("b0");
+            function f1(buttonId){
+                // console.log('f1(',buttonId,')');
+                // console.log('mostRecentActiveb:', mostRecentActiveb);
+                var newButtonPressed = document.getElementById(buttonId); // console.log(newButtonPressed);
+                // console.log(mostRecentActiveb===newButtonPressed);
+                // console.log(newButtonPressed.className);
+                if (newButtonPressed.className === "inactive") {
+                    newButtonPressed.className = "active"; 
+                    mostRecentActiveb.className="inactive";
+                    mostRecentActiveb=newButtonPressed;
+                } else {
+                    // pressed already active button; do nothing
+                }
+                toggleResponsive();
+            }
+
+            /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+            function toggleResponsive() {
+                var x = document.getElementById("topnav");
+                if (x.className === "topnavbar") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnavbar";
+                }
+            }
+        </script>
+        <!-- html top navigation bar END -->
 
         <div class="container">
 
