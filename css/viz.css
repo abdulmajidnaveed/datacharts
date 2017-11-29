@@ -1,8 +1,14 @@
 body {
     background-color: lightblue;
     font-family:'Gudea', sans-serif;
-    padding: 1em 1em 1em 1em;
+    /* padding: 1em 1em 1em 1em; */
     color: navy; /* #4F0C00; */
+
+    /* add space at top; 
+    top nav bar (menu) is shown on top of this space */
+    margin-left: 00px;
+    margin-top: 1em; /* margin-top: 36px;  */
+    padding: 1em 00px;
 }
 
 .clearfix:before,
@@ -21,6 +27,7 @@ body {
 
 .container {
     margin: 1em auto;
+    padding: 1em 1em 1em 1em;
     /* width: 95%; */
 }
 h1 {
