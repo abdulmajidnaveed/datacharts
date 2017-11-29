@@ -15,11 +15,11 @@
         <!-- html top navigation bar BEGIN -->
         <div class="topnavbar"  id="topnav" >
             <span class="leftspacer"></span>
-            <a href="#home" class="active" id="b0" onclick="f1('b0')"><span>Home</span></a>
-            <a href="#descr" class="inactive" id="b1" onclick="f1('b1')"><span>Description</span></a>
-            <a href="#data" class="inactive" id="b2" onclick="f1('b2')"><span>Data</span></a>
-            <a href="#lib" class="inactive" id="b3" onclick="f1('b3')"><span>Libraries</span></a>
-            <a href="#about" class="inactive" id="b4" onclick="f1('b4')"><span>About</span></a>
+            <a href="javascript:void(0)" class="active" id="b0" onclick="f1('b0')"><span>Home</span></a>
+            <a href="javascript:void(0)" class="inactive" id="b1" onclick="f1('b1')"><span>Description</span></a>
+            <a href="javascript:void(0)" class="inactive" id="b2" onclick="f1('b2')"><span>Data</span></a>
+            <a href="javascript:void(0)" class="inactive" id="b3" onclick="f1('b3')"><span>Libraries</span></a>
+            <a href="javascript:void(0)" class="inactive" id="b4" onclick="f1('b4')"><span>About</span></a>
             <a href="javascript:void(0);" class="icon" onclick="toggleResponsive()"><span>&#9776;</span></a>
         </div>
         <script>
@@ -33,7 +33,27 @@
                 } else {
                     // pressed already active button; do nothing
                 }
-                toggleResponsive();
+                toggleResponsive();f2(buttonId);
+            }
+            function f2(buttonId){
+                var contentdivs = document.getElementsByClassName("content-div");
+                for (i=0; i< contentdivs.length; i++){
+                    // contentdivs[i].style.backgroundColor = 'grey';
+                    contentdivs[i].style.display = 'none';
+                }
+                var indx
+                if (buttonId==='b0'){
+                    var c = document.getElementsByClassName('container')[0];
+                } else if(buttonId==='b1'){
+                    var c = document.getElementById('descr1');
+                } else if (buttonId==='b2'){
+                    var c = document.getElementById('data2');
+                } else if (buttonId==='b3'){
+                    var c = document.getElementById('lib3');
+                } else if (buttonId==='b4'){
+                    var c = document.getElementById('about4');
+                }
+                c.style.display = 'block';
             }
             /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
             function toggleResponsive() {
@@ -47,7 +67,8 @@
         </script>
         <!-- html top navigation bar END -->
 
-        <div class="container">
+        <div class="main">
+        <div class="container content-div">
 
             <h1>Data Visualization for Aircraft Strikes</h1>
 
@@ -86,10 +107,21 @@
                 </div>
             </div>
 
-
-
         </div>
-
+        <div id="descr1" class="content-div"
+        style="margin: 1em auto; padding: 1em; height: 50px;">
+            <h1>Description </h1></div>
+        <div id="data2" class="content-div"
+        style="margin: 1em auto; padding: 1em; height: 50px;">
+            <h1>Data </h1></div>
+        <div id="lib3" class="content-div"
+        style="margin: 1em auto; padding: 1em; height: 50px;">
+            <h1>Libraries </h1></div>
+        <div id="about4" class="content-div"
+        style="margin: 1em auto; padding: 1em; height: 50px;">
+            <h1>About </h1></div>
+        </div>
+        
         <script src="//d3js.org/d3.v3.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.1.0/topojson.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
