@@ -43,19 +43,19 @@
                     // contentdivs[i].style.backgroundColor = 'grey';
                     contentdivs[i].style.display = 'none';
                 }
-                var indx
+                var contentDiv;
                 if (buttonId==='b0'){
-                    var c = document.getElementsByClassName('container')[0];
-                } else if(buttonId==='b1'){
-                    var c = document.getElementById('descr1');
+                    contentDiv = document.getElementsByClassName('container')[0];
+                } else if (buttonId==='b1'){
+                    contentDiv = document.getElementById('content-description');
                 } else if (buttonId==='b2'){
-                    var c = document.getElementById('data2');
+                    contentDiv = document.getElementById('content-data');
                 } else if (buttonId==='b3'){
-                    var c = document.getElementById('lib3');
+                    contentDiv = document.getElementById('content-libraries');
                 } else if (buttonId==='b4'){
-                    var c = document.getElementById('about4');
+                    contentDiv = document.getElementById('content-about');
                 }
-                c.style.display = 'block';
+                contentDiv.style.display = 'block';
             }
             /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
             function toggleResponsive() {
@@ -110,13 +110,14 @@
             </div>
 
         </div>
-        <div id="descr1" class="content-div" >
-            <h1>Description</h1></div>
-        <div id="data2" class="content-div" >
+        <div id="content-description" class="content-div" >
+            <h1>Description</h1>
+        </div>
+        <div id="content-data" class="content-div" >
             <h1>Data</h1></div>
-        <div id="lib3" class="content-div">
+        <div id="content-libraries" class="content-div">
             <h1>Libraries</h1></div>
-        <div id="about4" class="content-div">
+        <div id="content-about" class="content-div">
             <h1>About</h1></div>
         </div>
         
