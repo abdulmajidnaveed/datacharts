@@ -57,7 +57,8 @@
                 }
                 contentDiv.style.display = 'block';
             }
-            /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+            /* Toggle between adding and removing the "responsive" class 
+            to topnav when the user clicks on the icon */
             function toggleResponsive() {
                 var x = document.getElementById("topnav");
                 if (x.className === "topnavbar") {
@@ -78,7 +79,8 @@
             <div class="overlay">
                 <input id="dep" type="text" placeholder="Look up an airport" disabled class="dep typeahead">
                 </span>
-                <span id="msg" class="error msg">We can't find strikes from this location</span>
+                <span id="msg" class="error msg">
+                    Strikes not found for this location</span>
             </div>
 
             <div id="map" class="area map">
@@ -114,8 +116,9 @@
         <div id="content-description" class="content-div" >
             <h1>Description</h1>
             <p>
-                The visualization allows you to view the distribution of strike events across 
-                bird species, months, years for a specified airport.
+                The visualization allows you to view the distribution of 
+                strike events across bird species, months, years for a 
+                specified airport.
             </p>
             <p>
                 <a href="./preview/img1.png" target="_blank">
@@ -124,7 +127,8 @@
                 </a>
             </p>
             <p>
-                Type something in the textbox and a dropdown will appear suggesting airports.
+                Type something in the textbox and a dropdown will appear 
+                suggesting airports.
             </p>
             <p>
                 Choose one and charts (three bar graphs and a pie chart) will appear and the map 
@@ -174,45 +178,91 @@
         <div id="content-data" class="content-div" >
             <h1>Data</h1>
             <p>
-                The dataset used was obtained from the FAA Wildlife Strike DataBase `http://wildlife.faa.gov/`.
-            </p> <p>
-                Some filtering and processing was done on the dataset.
+                The dataset used was obtained from the FAA Wildlife Strike DataBase
+                <a href="http://wildlife.faa.gov/"> wildlife.faa.gov/</a>.
+                The data contains more than 5000 incidents over years 1990 to 2014.
             </p><p>
-                Airport geographical data was used to illustrate the airport on the map.                    
+                Airport geographical data (latitude and longitude) was used to 
+                plot the airport location on the map.
+            <p> <br></p>
+            </p> <p>
+                Some filtering and processing was done after loading the data.
+                For example, when an airport is selected by the user,
+                the wildlife data is filtered based on matching the airport id
+                with the iata code of the selected airport.
+                Aggregation is done to compute the total
+                costs of repairs associated to a particular airport.
             </p>
+            <div style="background-color:transparent;height:60vh;"> </div>
         </div>
         <div id="content-libraries" class="content-div">
             <h1>Libraries</h1>
             <p>
-            The application is principally built using `dc.js`, `D3.js`, and `DataMaps`.
+            The application is principally built using 
+            <!-- <p style="font-family:'Lucida Console', monospace">This text is monospace text.</p> -->
+            <code>dc.js</code>, <code>D3.js</code>, and <code>DataMaps</code>.
         </p><p>
-            _Dc.js_ (Dimensional Charting) is a charting library used together with _D3.js_ to create the bar graphs and pie chart.
-            The linking of the data is accomplished using `Crossfilter`, a library used for grouping and quick addition and removal of data groups.
-            _DataMaps_ is used to draw SVG image of USA map with labels. It is a customizable SVG map graphic for the web in a single Javascript file that works with D3.js.
+            <em>Dc.js</em> (Dimensional Charting) is a charting library used 
+            together with <em>D3.js</em> to create the bar graphs and pie chart.
+            The linking of the data is accomplished using <code>Crossfilter</code>, 
+            a library used for grouping and quick addition and removal of data groups.
+            <em>DataMaps</em> is used to draw an SVG image of USA map with labels. 
+            It is a customizable SVG map graphic for the web in a single Javascript 
+            file that works with D3.js.
 
+        </p>
+        <blockquote>
+        <p>
+          <h4>About dc.js and Crossfilter.js:</h4>
         </p><p>
-            >More about dc.js and Crossfilter.js:
+            dc.js is a javascript charting library with native Crossfilter support, 
+            allowing highly efficient exploration on large multi-dimensional datasets. 
+            It leverages D3 to render charts in CSS-friendly SVG format.
         </p><p>
-            >dc.js is a javascript charting library with native Crossfilter support, allowing highly efficient exploration on large multi-dimensional datasets. It leverages D3 to render charts in CSS-friendly SVG format.
+            Charts rendered using dc.js are data driven and reactive and provide instant 
+            feedback to user interaction. In dc.js, each chart displays an aggregation 
+            of some attributes through the position, size, and color of its elements, and 
+            also presents a dimension which can be filtered. When the filter or brush 
+            changes, all other charts are updated dynamically, using animated transitions. 
+            dc.js combines the analytics power of Crossfilter with the charting power of 
+            D3.js.
+        </p><h4 style="margin-left:20px;">
+            Crossfilter - <em>fast multidimensional filtering for coordinated views</em>
+        </h4><p>
+            Crossfilter is a JavaScript library for exploring large multivariate datasets 
+            in the browser, allowing multidimensional filtering and aggregation of tabular 
+            data. In other words, it allows the user to slice and dice row-based data.
+        </p>
+        </blockquote>
+        <p>
+            Other supporting libraries used include <code>typeahead.js</code>, 
+            <code>underScore.js</code>, <code>TopoJSON</code>,
+            and <code>JQuery</code>.
+        </p>
+        <blockquote>
+        <p>
+            <a href="https://github.com/twitter/typeahead.js/"><em>Typeahead.js</em></a> 
+            is a jQuery autocomplete library.
         </p><p>
-            >Charts rendered using dc.js are data driven and reactive and provide instant feedback to user interaction. In dc.js, each chart displays an aggregation of some attributes through the position, size, and color of its elements, and also presents a dimension which can be filtered. When the filter or brush changes, all other charts are updated dynamically, using animated transitions. dc.js combines the analytics power of Crossfilter with the charting power of D3.js.
+            <a href="http://underscorejs.org/"><em>Underscore.js</em></a>
+            is a JavaScript library that provides useful functional programming 
+            helpers without extending any built-in objects.
         </p><p>
-            >More about Crossfilter - `fast multidimensional filtering for coordinated views`
-        </p><p>
-            >Crossfilter is a JavaScript library for exploring large multivariate datasets in the browser, allowing multidimensional filtering and aggregation of tabular data. In other words, it allows the user to slice and dice row-based data.
-        </p><p>
-            Other supporting libraries used include `typeahead.js`, `underScore.js`, `TopoJSON`, 
-            and `JQuery`.
-        </p><p>
-            >_Typeahead.js_ is a jQuery autocomplete library.
-        </p><p>
-            >[_Underscore.js_](`http://underscorejs.org/`) is a JavaScript library that provides useful functional programming helpers without extending any built-in objects.
-        </p><p>
-            >_TopoJSON_ is an open standard format for representing geographical features and encodes geospatial topology.
-        </p>            
+            <em>TopoJSON</em> is an open standard format for representing 
+            geographical features and encodes geospatial topology.
+        </p></blockquote>
         </div>
         <div id="content-about" class="content-div">
-            <h1>About</h1></div>
+            <h1>About</h1>
+            <p> This application was developed as part of an exercise to use D3.js to develop 
+                a visualization.
+            </p>
+            <p> There are other possible directions and extensions with this project.</p>
+            <p> The user could be allowed to look for airports through the map. </p>
+            <p> The data could be loaded and displayed to the user. </p>
+            <div style="background-color:transparent;height:60vh;"> </div>
+            
+        </div>
         </div>
         
         <script src="//d3js.org/d3.v3.min.js"></script>
