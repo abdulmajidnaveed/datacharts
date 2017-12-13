@@ -1,0 +1,497 @@
+[
+ {
+   "id": 1,
+   "Column Name": "INDEX NR",
+   "Explanation of Column Name and Codes": "Individual record number"
+ },
+ {
+   "id": 2,
+   "Column Name": "OPID",
+   "Explanation of Column Name and Codes": "Airline operator code"
+ },
+ {
+   "id": 3,
+   "Column Name": "OPERATOR",
+   "Explanation of Column Name and Codes": "A three letter International Civil Aviation Organization code for aircraft operators. (BUS = business, PVT = private aircraft other than business, GOV = government aircraft, MIL - military aircraft.)"
+ },
+ {
+   "id": 4,
+   "Column Name": "ATYPE",
+   "Explanation of Column Name and Codes": "Aircraft"
+ },
+ {
+   "id": 5,
+   "Column Name": "AMA",
+   "Explanation of Column Name and Codes": "International Civil Aviation Organization code for Aircraft Make"
+ },
+ {
+   "id": 6,
+   "Column Name": "AMO",
+   "Explanation of Column Name and Codes": "International Civil Aviation Organization code for Aircraft Model "
+ },
+ {
+   "id": 7,
+   "Column Name": "EMA",
+   "Explanation of Column Name and Codes": "Engine Make Code (see Engine Codes tab below)"
+ },
+ {
+   "id": 8,
+   "Column Name": "EMO",
+   "Explanation of Column Name and Codes": "Engine Model Code (see Engine Codes tab below)"
+ },
+ {
+   "id": 9,
+   "Column Name": "AC_CLASS",
+   "Explanation of Column Name and Codes": "Type of aircraft (see Aircraft Type tab below)"
+ },
+ {
+   "id": 10,
+   "Column Name": "AC_MASS",
+   "Explanation of Column Name and Codes": "1 = 2,250 kg or less: 2 = ,2251-5700 kg: 3 = 5,701-27,000 kg: 4 = 27,001-272,000 kg: 5 = above 272,000 kg"
+ },
+ {
+   "id": 11,
+   "Column Name": "NUM_ENGS",
+   "Explanation of Column Name and Codes": "Number of engines"
+ },
+ {
+   "id": 12,
+   "Column Name": "TYPE_ENG",
+   "Explanation of Column Name and Codes": "Type of power A = reciprocating engine (piston): B = Turbojet: C = Turboprop: D = Turbofan: E = None (glider): F = Turboshaft (helicopter): Y = Other"
+ },
+ {
+   "id": 13,
+   "Column Name": "ENG_1_POS",
+   "Explanation of Column Name and Codes": "Where engine # 1 is mounted  on aircraft (see Engine Position tab below)"
+ },
+ {
+   "id": 14,
+   "Column Name": "ENG_2_POS",
+   "Explanation of Column Name and Codes": "Where engine # 2 is mounted  on aircraft (see Engine Position tab below)"
+ },
+ {
+   "id": 15,
+   "Column Name": "ENG_3_POS",
+   "Explanation of Column Name and Codes": "Where engine # 3 is mounted  on aircraft (see Engine Position tab below)"
+ },
+ {
+   "id": 16,
+   "Column Name": "ENG_4_POS",
+   "Explanation of Column Name and Codes": "Where engine # 4 is mounted  on aircraft (see Engine Position tab below)"
+ },
+ {
+   "id": 17,
+   "Column Name": "REG",
+   "Explanation of Column Name and Codes": "Aircraft registration"
+ },
+ {
+   "id": 18,
+   "Column Name": "FLT",
+   "Explanation of Column Name and Codes": "Flight number"
+ },
+ {
+   "id": 19,
+   "Column Name": "REMAINS_COLLECTED",
+   "Explanation of Column Name and Codes": "Indicates if bird or wildlife remains were found and collected"
+ },
+ {
+   "id": 20,
+   "Column Name": "REMAINS_SENT",
+   "Explanation of Column Name and Codes": "Indicates if remains were sent to the Smithsonian Institution for identifcation"
+ },
+ {
+   "id": 21,
+   "Column Name": "INCIDENT_DATE",
+   "Explanation of Column Name and Codes": "Date strike occurred"
+ },
+ {
+   "id": 22,
+   "Column Name": "INCIDENT_MONTH",
+   "Explanation of Column Name and Codes": "Month strike occurred"
+ },
+ {
+   "id": 23,
+   "Column Name": "INCIDENT_YEAR",
+   "Explanation of Column Name and Codes": "Year strike occurred"
+ },
+ {
+   "id": 24,
+   "Column Name": "TIME_OF_DAY",
+   "Explanation of Column Name and Codes": "Light conditions"
+ },
+ {
+   "id": 25,
+   "Column Name": "TIME",
+   "Explanation of Column Name and Codes": "Hour and minute in local time"
+ },
+ {
+   "id": 26,
+   "Column Name": "AIRPORT_ID",
+   "Explanation of Column Name and Codes": "International Civil Aviation Organization airport identifier for location of strike whether it was on or off airport"
+ },
+ {
+   "id": 27,
+   "Column Name": "AIRPORT",
+   "Explanation of Column Name and Codes": "Name of airport"
+ },
+ {
+   "id": 28,
+   "Column Name": "STATE",
+   "Explanation of Column Name and Codes": "State"
+ },
+ {
+   "id": 29,
+   "Column Name": "FAAREGION",
+   "Explanation of Column Name and Codes": "FAA Region where airport is located"
+ },
+ {
+   "id": 30,
+   "Column Name": "ENROUTE",
+   "Explanation of Column Name and Codes": "If strike did not occur on approach, climb, landing roll, taxi or take-off, aircraft was enroute. This shows location."
+ },
+ {
+   "id": 31,
+   "Column Name": "RUNWAY",
+   "Explanation of Column Name and Codes": "Runway"
+ },
+ {
+   "id": 32,
+   "Column Name": "LOCATION",
+   "Explanation of Column Name and Codes": "Various information about aircraft location if enroute or airport where strike evidence was found. Some locations show the two airports for the flight departure and arrival if pilot was unaware of the strike."
+ },
+ {
+   "id": 33,
+   "Column Name": "HEIGHT",
+   "Explanation of Column Name and Codes": "Feet Above Ground Level"
+ },
+ {
+   "id": 34,
+   "Column Name": "SPEED",
+   "Explanation of Column Name and Codes": "Knots (indicated air speed)"
+ },
+ {
+   "id": 35,
+   "Column Name": "DISTANCE",
+   "Explanation of Column Name and Codes": "Miles from airport"
+ },
+ {
+   "id": 36,
+   "Column Name": "PHASE_OF_FLT",
+   "Explanation of Column Name and Codes": "Phase of flight during which strike occurred"
+ },
+ {
+   "id": 37,
+   "Column Name": "DAMAGE",
+   "Explanation of Column Name and Codes": ""
+ },
+ {
+   "id": 38,
+   "Column Name": "Blank",
+   "Explanation of Column Name and Codes": "Unknown"
+ },
+ {
+   "id": 39,
+   "Column Name": "M = minor",
+   "Explanation of Column Name and Codes": "When the aircraft can be rendered airworthy by simple repairs or replacements and an extensive inspection is not necessary."
+ },
+ {
+   "id": 40,
+   "Column Name": "M? = uncertain level",
+   "Explanation of Column Name and Codes": "The aircraft was damaged, but details as to the extent of the damage are lacking."
+ },
+ {
+   "id": 41,
+   "Column Name": "S = substantial",
+   "Explanation of Column Name and Codes": "When the aircraft incurs damage or structural failure which adversely affects the structure strength, performance or flight characteristics of the aircraft and which would normally require major repair or replacement of the affected component."
+ },
+ {
+   "id": 42,
+   "Column Name": "D = Destroyed",
+   "Explanation of Column Name and Codes": "When the damage sustained makes it inadvisable to restore the aircraft to an airworthy condition."
+ },
+ {
+   "id": 43,
+   "Column Name": "STR_RAD",
+   "Explanation of Column Name and Codes": "Struck radome"
+ },
+ {
+   "id": 44,
+   "Column Name": "DAM_RAD",
+   "Explanation of Column Name and Codes": "Damaged radome"
+ },
+ {
+   "id": 45,
+   "Column Name": "STR_WINDSHLD",
+   "Explanation of Column Name and Codes": "Struck windshield"
+ },
+ {
+   "id": 46,
+   "Column Name": "DAM_WINDSHLD",
+   "Explanation of Column Name and Codes": "Damaged windshield"
+ },
+ {
+   "id": 47,
+   "Column Name": "STR_NOSE",
+   "Explanation of Column Name and Codes": "Struck nose"
+ },
+ {
+   "id": 48,
+   "Column Name": "DAM_NOSE",
+   "Explanation of Column Name and Codes": "Damaged nose"
+ },
+ {
+   "id": 49,
+   "Column Name": "STR_ENG1",
+   "Explanation of Column Name and Codes": "Struck Engine 1"
+ },
+ {
+   "id": 50,
+   "Column Name": "DAM_ENG1",
+   "Explanation of Column Name and Codes": "Damaged Engine 1"
+ },
+ {
+   "id": 51,
+   "Column Name": "STR_ENG2",
+   "Explanation of Column Name and Codes": "Struck Engine 2"
+ },
+ {
+   "id": 52,
+   "Column Name": "DAM_ENG2",
+   "Explanation of Column Name and Codes": "Damaged Engine 2"
+ },
+ {
+   "id": 53,
+   "Column Name": "STR_ENG3",
+   "Explanation of Column Name and Codes": "Struck Engine 3"
+ },
+ {
+   "id": 54,
+   "Column Name": "DAM_ENG3",
+   "Explanation of Column Name and Codes": "Damaged Engine 3"
+ },
+ {
+   "id": 55,
+   "Column Name": "STR_ENG4",
+   "Explanation of Column Name and Codes": "Struck Engine 4"
+ },
+ {
+   "id": 56,
+   "Column Name": "DAM_ENG4",
+   "Explanation of Column Name and Codes": "Damaged Engine 4"
+ },
+ {
+   "id": 57,
+   "Column Name": "INGESTED",
+   "Explanation of Column Name and Codes": "Engine ingested the bird/ animal"
+ },
+ {
+   "id": 58,
+   "Column Name": "STR_PROP",
+   "Explanation of Column Name and Codes": "Struck Propeller"
+ },
+ {
+   "id": 59,
+   "Column Name": "DAM_PROP",
+   "Explanation of Column Name and Codes": "Damaged Propeller"
+ },
+ {
+   "id": 60,
+   "Column Name": "STR_WING_ROT",
+   "Explanation of Column Name and Codes": "Struck Wing or Rotor"
+ },
+ {
+   "id": 61,
+   "Column Name": "DAM_WING_ROT",
+   "Explanation of Column Name and Codes": "Damaged Wing or Rotor"
+ },
+ {
+   "id": 62,
+   "Column Name": "STR_FUSE",
+   "Explanation of Column Name and Codes": "Struck Fuselage"
+ },
+ {
+   "id": 63,
+   "Column Name": "DAM_FUSE",
+   "Explanation of Column Name and Codes": "Damaged Fuselage"
+ },
+ {
+   "id": 64,
+   "Column Name": "STR_LG",
+   "Explanation of Column Name and Codes": "Struck Landing Gear"
+ },
+ {
+   "id": 65,
+   "Column Name": "DAM_LG",
+   "Explanation of Column Name and Codes": "Damaged Landing Gear"
+ },
+ {
+   "id": 66,
+   "Column Name": "STR_TAIL",
+   "Explanation of Column Name and Codes": "Struck Tail"
+ },
+ {
+   "id": 67,
+   "Column Name": "DAM_TAIL",
+   "Explanation of Column Name and Codes": "Damaged Tail"
+ },
+ {
+   "id": 68,
+   "Column Name": "STR_LGHTS",
+   "Explanation of Column Name and Codes": "Struck Lights"
+ },
+ {
+   "id": 69,
+   "Column Name": "DAM_LGHTS",
+   "Explanation of Column Name and Codes": "Damaged Lights"
+ },
+ {
+   "id": 70,
+   "Column Name": "STR_OTHER",
+   "Explanation of Column Name and Codes": "Struck Other than parts shown above"
+ },
+ {
+   "id": 71,
+   "Column Name": "DAM_OTHER",
+   "Explanation of Column Name and Codes": "Damaged Other than parts shown above"
+ },
+ {
+   "id": 72,
+   "Column Name": "OTHER_SPECIFY",
+   "Explanation of Column Name and Codes": "What part was struck other than those listed above"
+ },
+ {
+   "id": 73,
+   "Column Name": "EFFECT",
+   "Explanation of Column Name and Codes": "Effect on flight"
+ },
+ {
+   "id": 74,
+   "Column Name": "EFFECT_OTHER",
+   "Explanation of Column Name and Codes": "Effect on flight other than those listed on the form"
+ },
+ {
+   "id": 75,
+   "Column Name": "SKY",
+   "Explanation of Column Name and Codes": "Type of cloud cover, if any"
+ },
+ {
+   "id": 76,
+   "Column Name": "PRECIP",
+   "Explanation of Column Name and Codes": "Precipitation"
+ },
+ {
+   "id": 77,
+   "Column Name": "SPECIES_ID",
+   "Explanation of Column Name and Codes": "International Civil Aviation Organization code for type of bird or other wildlife"
+ },
+ {
+   "id": 78,
+   "Column Name": "SPECIES",
+   "Explanation of Column Name and Codes": "Common name for bird or other wildlife"
+ },
+ {
+   "id": 79,
+   "Column Name": "BIRDS_SEEN",
+   "Explanation of Column Name and Codes": "Number of birds/wildlife seen by pilot"
+ },
+ {
+   "id": 80,
+   "Column Name": "BIRDS_STRUCK",
+   "Explanation of Column Name and Codes": "Number of birds/wildlife struck"
+ },
+ {
+   "id": 81,
+   "Column Name": "SIZE",
+   "Explanation of Column Name and Codes": "Size of bird as reported by pilot is a relative scale. Entry should reflect the perceived size as opposed to a scientifically determined value. If more than one species was struck, larger bird is entered."
+ },
+ {
+   "id": 82,
+   "Column Name": "WARNED",
+   "Explanation of Column Name and Codes": "Pilot warned of birds/wildlife"
+ },
+ {
+   "id": 83,
+   "Column Name": "COMMENTS",
+   "Explanation of Column Name and Codes": "As entered by database manager. Can include name of aircraft owner, types of reports received, updates, etc."
+ },
+ {
+   "id": 84,
+   "Column Name": "REMARKS",
+   "Explanation of Column Name and Codes": "Most of remarks are from the form but some are data entry notes and are usually in parentheses."
+ },
+ {
+   "id": 85,
+   "Column Name": "AOS",
+   "Explanation of Column Name and Codes": "Time aircraft was out of service in hours. If unknown, it is blank."
+ },
+ {
+   "id": 86,
+   "Column Name": "COST_REPAIRS",
+   "Explanation of Column Name and Codes": "Estimated cost of repairs of replacement in dollars (USD)"
+ },
+ {
+   "id": 87,
+   "Column Name": "COST_OTHER",
+   "Explanation of Column Name and Codes": "Estimated other costs, other than those in previous field in dollars (USD). May include loss of revenue, hotel expenses due to flight cancellation, costs of fuel dumped, etc."
+ },
+ {
+   "id": 88,
+   "Column Name": "COST_REPAIRS_INFL_ADJ",
+   "Explanation of Column Name and Codes": "Costs adjusted for inflation"
+ },
+ {
+   "id": 89,
+   "Column Name": "COST_OTHER_INFL_ADJ",
+   "Explanation of Column Name and Codes": "Other cost adjusted for inflation"
+ },
+ {
+   "id": 90,
+   "Column Name": "REPORTED_NAME",
+   "Explanation of Column Name and Codes": "Name(s) of person(s) filing report"
+ },
+ {
+   "id": 91,
+   "Column Name": "REPORTED_TITLE",
+   "Explanation of Column Name and Codes": "Title(s) of person(s) filing report"
+ },
+ {
+   "id": 92,
+   "Column Name": "REPORTED_DATE",
+   "Explanation of Column Name and Codes": "Date report was written"
+ },
+ {
+   "id": 93,
+   "Column Name": "SOURCE",
+   "Explanation of Column Name and Codes": "Type of report. Note: for multiple types of reports this will be indicated as Multiple.  See \"Comments\" field for details"
+ },
+ {
+   "id": 94,
+   "Column Name": "PERSON",
+   "Explanation of Column Name and Codes": "Only one selection allowed. For multiple reports, see field \"Reported Title\""
+ },
+ {
+   "id": 95,
+   "Column Name": "NR_INJURIES",
+   "Explanation of Column Name and Codes": "Number of people injured"
+ },
+ {
+   "id": 96,
+   "Column Name": "NR_FATALITIES",
+   "Explanation of Column Name and Codes": "Number of human fatalities"
+ },
+ {
+   "id": 97,
+   "Column Name": "LUPDATE",
+   "Explanation of Column Name and Codes": "Last time record was updated"
+ },
+ {
+   "id": 98,
+   "Column Name": "TRANSFER",
+   "Explanation of Column Name and Codes": "Unused field at this time"
+ },
+ {
+   "id": 99,
+   "Column Name": "INDICATED_DAMAGE",
+   "Explanation of Column Name and Codes": "Indicates whether or not aircraft was damaged"
+ }
+]
