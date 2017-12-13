@@ -2,5 +2,43 @@
 .content-div {
     margin: 1em auto;
     padding: 1em 1em 1em 1em;
+}
 
+code {
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    /* font-size: 1.1rem; */
+    background-color: rgba(27,31,35,0.05);
+    border-radius: 3px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    word-wrap: break-word;box-sizing: border-box;
+}
+em {
+    box-sizing: border-box;word-wrap: break-word;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+blockquote {
+    padding: 0 1em;
+    color: #6a737d;
+    /* border-left: 0.25em solid #dfe2e5; */
+    border-left: 0.20em solid rgba(0, 160, 162, 0.90);
+    margin-top: 0;
+    margin-bottom: 16px;
+    margin: 0;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
+    font-size: 16px;
+    line-height: 1.5;
+}
+blockquote p{
+    margin-left: 20px;
+}
+blockquote h4{
+    text-decoration:underline;
+    font-weight:inherit;
 }
