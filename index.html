@@ -12,6 +12,19 @@
         <!-- --for content containers -->
         <link rel="stylesheet" href="css/content.css">
 
+        <!-- --stylesheet for dataTables   -->
+        <link rel="stylesheet"
+          href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+        <!-- --for dataTables : import jquery first -->
+        <script 
+          src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+        </script>
+        <!-- --next import dataTables -->
+        <script 
+        src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js">
+        </script>
+
+
     </head>
     <body>
         <!-- html top navigation bar BEGIN -->
@@ -71,7 +84,7 @@
         </script>
         <!-- html top navigation bar END -->
 
-        <div class="main">
+      <div class="main">
         <div class="container content-div">
 
             <h1>Data Visualization for Aircraft Strikes</h1>
@@ -111,8 +124,9 @@
                     <button type="button" class="reset">reset</button>
                 </div>
             </div>
-
         </div>
+
+        <!-- --Description -->
         <div id="content-description" class="content-div" >
             <h1>Description</h1>
             <p>
@@ -175,7 +189,9 @@
                 similarly used to selectively filter by clicking on the sectors.
             </p>
         </div>
-        <div id="content-data" class="content-div" >
+
+        <!-- -- Data  -->
+        <div id="content-data" class="content-div" >    
             <h1>Data</h1>
             <p>
                 The dataset used was obtained from the FAA Wildlife Strike DataBase
@@ -193,67 +209,110 @@
                 Aggregation is done to compute the total
                 costs of repairs associated to a particular airport.
             </p>
-            <div style="background-color:transparent;height:60vh;"> </div>
+
+            <p> A description of the fields of the data is shown in 
+                the table below.
+            </p>
+            <div style="width:100%;background-color: rgba(20, 229, 232, 0.68);">
+                <h3 style="text-align:center"> List of fields </h3>
+                <table id="data-fields" class="display" cellspacing="0" width="100%">
+                    <thead>
+                      <tr>
+                        <th>Id</th>
+                        <th>Column Name</th>
+                        <th>Explanation of Column Name and Codes</th>
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tr>
+                        <th>Id</th>
+                        <th>Column Name</th>
+                        <th>Explanation of Column Name and Codes</th>
+                      </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <script>
+                function dataFieldsDrawDataTable(){
+                    $('#data-fields').DataTable({
+                        "ajax": {
+                          "url": "data/wildlife-data-fieldlist.json",
+                          "dataSrc": ""
+                        },
+                        "columns": [
+                          { "data": "id" },
+                          { "data": "Column Name" },
+                          { "data": "Explanation of Column Name and Codes" }
+                        ]
+                    });
+                };
+            </script>
+
+            <div style="background-color:transparent;height:60vh;display:none;"> </div>
         </div>
+
+        <!-- -- Libraries -->
         <div id="content-libraries" class="content-div">
             <h1>Libraries</h1>
             <p>
             The application is principally built using 
-            <!-- <p style="font-family:'Lucida Console', monospace">This text is monospace text.</p> -->
-            <code>dc.js</code>, <code>D3.js</code>, and <code>DataMaps</code>.
-        </p><p>
-            <em>Dc.js</em> (Dimensional Charting) is a charting library used 
-            together with <em>D3.js</em> to create the bar graphs and pie chart.
-            The linking of the data is accomplished using <code>Crossfilter</code>, 
-            a library used for grouping and quick addition and removal of data groups.
-            <em>DataMaps</em> is used to draw an SVG image of USA map with labels. 
-            It is a customizable SVG map graphic for the web in a single Javascript 
-            file that works with D3.js.
-
-        </p>
-        <blockquote>
-        <p>
-          <h4>About dc.js and Crossfilter.js:</h4>
-        </p><p>
-            dc.js is a javascript charting library with native Crossfilter support, 
-            allowing highly efficient exploration on large multi-dimensional datasets. 
-            It leverages D3 to render charts in CSS-friendly SVG format.
-        </p><p>
-            Charts rendered using dc.js are data driven and reactive and provide instant 
-            feedback to user interaction. In dc.js, each chart displays an aggregation 
-            of some attributes through the position, size, and color of its elements, and 
-            also presents a dimension which can be filtered. When the filter or brush 
-            changes, all other charts are updated dynamically, using animated transitions. 
-            dc.js combines the analytics power of Crossfilter with the charting power of 
-            D3.js.
-        </p><h4 style="margin-left:20px;">
-            Crossfilter - <em>fast multidimensional filtering for coordinated views</em>
-        </h4><p>
-            Crossfilter is a JavaScript library for exploring large multivariate datasets 
-            in the browser, allowing multidimensional filtering and aggregation of tabular 
-            data. In other words, it allows the user to slice and dice row-based data.
-        </p>
-        </blockquote>
-        <p>
-            Other supporting libraries used include <code>typeahead.js</code>, 
-            <code>underScore.js</code>, <code>TopoJSON</code>,
-            and <code>JQuery</code>.
-        </p>
-        <blockquote>
-        <p>
-            <a href="https://github.com/twitter/typeahead.js/"><em>Typeahead.js</em></a> 
-            is a jQuery autocomplete library.
-        </p><p>
-            <a href="http://underscorejs.org/"><em>Underscore.js</em></a>
-            is a JavaScript library that provides useful functional programming 
-            helpers without extending any built-in objects.
-        </p><p>
-            <em>TopoJSON</em> is an open standard format for representing 
-            geographical features and encodes geospatial topology.
-        </p></blockquote>
+                <!-- <p style="font-family:'Lucida Console', monospace">monospace text</p> -->
+                <code>dc.js</code>, <code>D3.js</code>, and <code>DataMaps</code>.
+            </p><p>
+                <em>Dc.js</em> (Dimensional Charting) is a charting library used 
+                together with <em>D3.js</em> to create the bar graphs and pie chart.
+                The linking of the data is accomplished using <code>Crossfilter</code>, 
+                a library used for grouping and quick addition and removal of data groups.
+                <em>DataMaps</em> is used to draw an SVG image of USA map with labels. 
+                It is a customizable SVG map graphic for the web in a single Javascript 
+                file that works with D3.js.
+            </p>
+            <blockquote>
+            <p>
+            <h4>About dc.js and Crossfilter.js:</h4>
+            </p><p>
+                dc.js is a javascript charting library with native Crossfilter support, 
+                allowing highly efficient exploration on large multi-dimensional datasets. 
+                It leverages D3 to render charts in CSS-friendly SVG format.
+            </p><p>
+                Charts rendered using dc.js are data driven and reactive and provide instant 
+                feedback to user interaction. In dc.js, each chart displays an aggregation 
+                of some attributes through the position, size, and color of its elements, and 
+                also presents a dimension which can be filtered. When the filter or brush 
+                changes, all other charts are updated dynamically, using animated transitions. 
+                dc.js combines the analytics power of Crossfilter with the charting power of 
+                D3.js.
+            </p><h4 style="margin-left:20px;">
+                Crossfilter - <em>fast multidimensional filtering for coordinated views</em>
+            </h4><p>
+                Crossfilter is a JavaScript library for exploring large multivariate datasets 
+                in the browser, allowing multidimensional filtering and aggregation of tabular 
+                data. In other words, it allows the user to slice and dice row-based data.
+            </p>
+            </blockquote>
+            <p>
+                Other supporting libraries used include <code>typeahead.js</code>, 
+                <code>underScore.js</code>, <code>TopoJSON</code>,
+                and <code>JQuery</code>.
+            </p>
+            <blockquote>
+            <p>
+                <a href="https://github.com/twitter/typeahead.js/"><em>Typeahead.js</em></a> 
+                is a jQuery autocomplete library.
+            </p><p>
+                <a href="http://underscorejs.org/"><em>Underscore.js</em></a>
+                is a JavaScript library that provides useful functional programming 
+                helpers without extending any built-in objects.
+            </p><p>
+                <em>TopoJSON</em> is an open standard format for representing 
+                geographical features and encodes geospatial topology.
+            </p></blockquote>
         </div>
+
+        <!-- -- About -->
         <div id="content-about" class="content-div">
             <h1>About</h1>
+
             <p> This application was developed as part of an exercise to use D3.js to develop 
                 a visualization.
             </p>
@@ -263,13 +322,18 @@
             <div style="background-color:transparent;height:60vh;"> </div>
             
         </div>
-        </div>
-        
+      </div>
+
+      <script>
+            $(document).ready(function() {
+                dataFieldsDrawDataTable();
+            });
+        </script>
         <script src="//d3js.org/d3.v3.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.1.0/topojson.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.11/crossfilter.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.bundle.min.js"></script>
         <script src="js/datamaps.usa.min.js"></script>
         <script src="js/dc.js"></script>
