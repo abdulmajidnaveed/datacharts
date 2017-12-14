@@ -37,51 +37,8 @@
             <a href="javascript:void(0)" class="inactive" id="b4" onclick="f1('b4')"><span>About</span></a>
             <a href="javascript:void(0);" class="icon" onclick="toggleResponsive()"><span>&#9776;</span></a>
         </div>
-        <script>
-            mostRecentActiveb = document.getElementById("b0");
-            function f1(buttonId){
-                var newButtonPressed = document.getElementById(buttonId);
-                if (newButtonPressed.className === "inactive") {
-                    newButtonPressed.className = "active"; 
-                    mostRecentActiveb.className = "inactive";
-                    mostRecentActiveb=newButtonPressed;
-                } else {
-                    // pressed already active button; do nothing
-                }
-                toggleResponsive();f2(buttonId);
-            }
-            function f2(buttonId){
-                var contentdivs = document.getElementsByClassName("content-div");
-                for (i=0; i< contentdivs.length; i++){
-                    // contentdivs[i].style.backgroundColor = 'grey';
-                    contentdivs[i].style.display = 'none';
-                }
-                var contentDiv;
-                if (buttonId==='b0'){
-                    contentDiv = document.getElementsByClassName('container')[0];
-                } else if (buttonId==='b1'){
-                    contentDiv = document.getElementById('content-description');
-                } else if (buttonId==='b2'){
-                    contentDiv = document.getElementById('content-data');
-                } else if (buttonId==='b3'){
-                    contentDiv = document.getElementById('content-libraries');
-                } else if (buttonId==='b4'){
-                    contentDiv = document.getElementById('content-about');
-                }
-                contentDiv.style.display = 'block';
-            }
-            /* Toggle between adding and removing the "responsive" class 
-            to topnav when the user clicks on the icon */
-            function toggleResponsive() {
-                var x = document.getElementById("topnav");
-                if (x.className === "topnavbar") {
-                    x.className += " responsive";
-                } else {
-                    x.className = "topnavbar";
-                }
-            }
-            f1('b0');
-        </script>
+
+        <script src="js/topnavbar.js"></script>
         <!-- html top navigation bar END -->
 
       <div class="main">
@@ -126,8 +83,8 @@
             </div>
         </div>
 
-        <!-- --Description -->
-        <div id="content-description" class="content-div" >
+        <!-- --Description (hidden at start)-->
+        <div id="content-description" class="content-div" style="display:none;">
             <h1>Description</h1>
             <p>
                 The visualization allows you to view the distribution of 
@@ -190,8 +147,8 @@
             </p>
         </div>
 
-        <!-- -- Data  -->
-        <div id="content-data" class="content-div" >    
+        <!-- -- Data (hidden at start) -->
+        <div id="content-data" class="content-div" style="display:none;">    
             <h1>Data</h1>
             <p>
                 The dataset used was obtained from the FAA Wildlife Strike DataBase
@@ -251,8 +208,8 @@
             <div style="background-color:transparent;height:60vh;display:none;"> </div>
         </div>
 
-        <!-- -- Libraries -->
-        <div id="content-libraries" class="content-div">
+        <!-- -- Libraries (hidden at start) -->
+        <div id="content-libraries" class="content-div" style="display:none;">
             <h1>Libraries</h1>
             <p>
             The application is principally built using 
@@ -309,8 +266,8 @@
             </p></blockquote>
         </div>
 
-        <!-- -- About -->
-        <div id="content-about" class="content-div">
+        <!-- -- About (hidden at start) -->
+        <div id="content-about" class="content-div" style="display:none;">
             <h1>About</h1>
 
             <p> This application was developed as part of an exercise to use D3.js to develop 
