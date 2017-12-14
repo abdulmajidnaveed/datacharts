@@ -311,6 +311,7 @@
             popupTemplate: function(geo, data) {
                 var total = getTotalCostsByAirport(data.iataCode).formatMoney(2,',','.');
                 var filter = filterAirports(data.iataCode);
+                var outerdiv = '<div class="hover-info-outer">';
                 var html = '<div class="hover-info">'
                     + "Airport Code: " + data.iataCode + '<br>'
                     + "Airport Name: " + data.name + '<br>'
@@ -323,7 +324,7 @@
                     } else {
                         html += '</div>';
                     }
-                return html;
+                return outerdiv+html+'</div>';
             }
         });
     }

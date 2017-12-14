@@ -162,8 +162,12 @@ h1 {
     padding: 0.2em 0.5em;
     color: #E9D3A1;
     font-family:'Gudea', sans-serif;
+    font-size: 0.8rem;
     background: rgba(231, 95, 43, 0.7);
     transition: 0.2s all;
+}
+.hover-info-outer {
+    padding: 5px 0 0 10px;
 }
 
  SVG
