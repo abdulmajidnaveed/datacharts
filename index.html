@@ -170,24 +170,27 @@
             <p> A description of the fields of the data is shown in 
                 the table below.
             </p>
-            <div style="width:100%;background-color: rgba(20, 229, 232, 0.68); padding:10px;">
+            <div style=" background-color: rgba(20, 229, 232, 0.68); 
+              padding:10px;">
                 <h3 style="text-align:center"> List of fields </h3>
-                <table id="data-fields" class="display" cellspacing="0" width="100%">
-                    <thead>
-                      <tr>
-                        <th>Id</th>
-                        <th>Column Name</th>
-                        <th>Explanation of Column Name and Codes</th>
-                      </tr>
-                    </thead>
-                    <tfoot>
-                      <tr>
-                        <th>Id</th>
-                        <th>Column Name</th>
-                        <th>Explanation of Column Name and Codes</th>
-                      </tr>
-                    </tfoot>
-                </table>
+                <div style="padding:10px;margin:0 05%;font-size: 0.8rem;">
+                    <table id="data-fields" class="display compact" cellspacing="0" width="100%">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Column Name</th>
+                            <th>Explanation of Column Name and Codes</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>Id</th>
+                            <th>Column Name</th>
+                            <th>Explanation of Column Name and Codes</th>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
             </div>
             <script>
                 function dataFieldsDrawDataTable(){
