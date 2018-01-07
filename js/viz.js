@@ -69,6 +69,15 @@
         });
     }
 
+    function showCharts(value) {
+        d3.selectAll('.charts').classed('hidden', ! value);
+    }
+    document.getElementById("clearall").onclick = 
+      function(event){
+        showCharts(false);
+        map.bubbles([]);
+    };
+
     // enables the search bar - by $('#dep').prop('disabled', false)
     function enableSearchBar(){
         $('#dep').prop('disabled', false);
@@ -98,7 +107,8 @@
     //  use dc.js to draw the charts
 // ======================================================================================
     function drawCharts(data){
-        d3.selectAll('.hidden').classed('hidden', false);
+        showCharts(true);
+        // d3.selectAll('.hidden').classed('hidden', false);
         if (debug>0) console.log('drawCharts data:', data);
 
         dataTransformed = 

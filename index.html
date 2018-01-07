@@ -45,6 +45,12 @@
         <div class="container content-div">
 
             <h1>Data Visualization for Aircraft Strikes</h1>
+            <span id="clearall"
+             style="position:absolute;left:300px;
+               background-color: rgba(255,255,255,0.7);
+               cursor:pointer;line-height:40px;">
+             clear </span> 
+
 
             <div class="overlay">
                 <input id="dep" type="text" placeholder="Look up an airport" disabled class="dep typeahead">
@@ -285,18 +291,18 @@
       </div>
 
       <script>
-            $(document).ready(function() {
-                dataFieldsDrawDataTable();
-            });
-        </script>
-        <script src="//d3js.org/d3.v3.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.1.0/topojson.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.11/crossfilter.min.js"></script>
-        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
-        <script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.bundle.min.js"></script>
-        <script src="js/datamaps.usa.min.js"></script>
-        <script src="js/dc.js"></script>
-        <script src="js/viz.js"></script>
+          $(document).ready(function() {
+              dataFieldsDrawDataTable();
+          });
+      </script>
+      <script src="//d3js.org/d3.v3.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.1.0/topojson.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.11/crossfilter.min.js"></script>
+      <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+      <script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.bundle.min.js"></script>
+      <script src="js/datamaps.usa.min.js"></script>
+      <script src="js/dc.js"></script>
+      <script src="js/viz.js"></script>
     </body>
 </html>
