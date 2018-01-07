@@ -1,6 +1,5 @@
 (function init(){
 
-
     var airports = [];       // stores the airports.csv data
     var map;                 // stores the map data from datamaps
     var wlSample = [];       // stores the wildlife data
@@ -66,8 +65,35 @@
                 // replace KFLL with FLL, KSLC with SLC, ...
                 return t2;
             });
+
+            getUniqueAirportsFromWildLifeData(wlSample);
         });
     }
+
+    $.getScript("./js/helper.js", function() {
+        if(debug)console.log("loaded helper.js (but not necessarily executed...)");
+    });
+
+    showAirportsdebugging = 0;
+    function showAirports(number){
+        topAirports = dP.freqCountTableSortedDescending.slice();
+        if (!isNaN(Number(number))){
+            topAirports = dP.freqCountTableSortedDescending.slice(0,number);
+        }
+        topAirportIds = topAirports.map(
+            function(currentVal, index, arr){
+                return currentVal.airport;
+        });
+        if(showAirportsdebugging>0)console.log('topAirports:', topAirports);
+        var airportsFiltered = airports.filter(function(d){
+            return topAirportIds.includes(d.iataCode);
+        });
+        if(showAirportsdebugging>0)console.log('airportsFiltered:', airportsFiltered);
+        drawAirports(airportsFiltered);
+    }
+
+    document.getElementById("show-top-airports").onclick = 
+      function(event){ showAirports(); };
 
     function showCharts(value) {
         d3.selectAll('.charts').classed('hidden', ! value);
@@ -294,6 +320,55 @@
         }());
 
         $('.reset').on('click', resetCharts);
+    }
+
+    function drawAirports(airportsArray){
+        var paths = [];
+        var bubbles = [];
+        for (i=0;i<airportsArray.length;i++){
+            var originator = airportsArray[i];
+            var path = {
+                origin: {
+                    latitude: originator.latitude,
+                    longitude: originator.longitude
+                },
+            };
+            paths.push(path);
+
+            originator.radius = 4;
+            originator.fillKey = 'origin';
+
+            bubbles.push(originator);
+        };
+
+        map.bubbles(bubbles, {
+            popupTemplate: function(geo, data) {
+                var total = getTotalCostsByAirport(data.iataCode).formatMoney(2,',','.');
+                var filter = filterAirports(data.iataCode);
+                var outerdiv = '<div class="hover-info-outer">';
+                var html = '<div class="hover-info">'
+                    + "Airport Code: " + data.iataCode + '<br>'
+                    + "Airport Name: " + data.name + '<br>'
+                    + "City: " + data.city + '<br>';
+                    if (filter != null) {
+                        html += "Total Number of Incidents: " + filter.length + '<br>';
+                    }
+                    if (total != null) {
+                        html += "Total Costs of Repairs: $" + total + '</div>';
+                    } else {
+                        html += '</div>';
+                    }
+                return outerdiv+html+'</div>';
+            }
+        });
+        
+        d3.select('svg.datamap').selectAll('g.bubbles')
+        .selectAll('circle.datamaps-bubble')
+        .on('click', function(d) {
+            // select this airport now
+            onAirportChanged('', this.__data__);
+        })
+        .style('fill','rgb(25, 170, 33)').style('stroke-width', '1.2px');
     }
 
     /*
